@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVO Coffee — мобильная версия</title>
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ШАПКА С ЛОГОТИПОМ И ГАМБУРГЕР-МЕНЮ -->
+    <header class="header"> 
+        <div class="container">
+            <div class="header__inner">
+                <a href="#" class="logo">
+                    <img src="LOGO.png" alt="revo coffee" class="logo__img" width="120" height="50">
+                </a>
+                
+                <!-- Гамбургер-кнопка -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                </button>
+                
+                <!-- Основная навигация -->
+                <nav class="nav" id="mainNav">
+                    <ul class="nav__list"> 
+                        <li class="nav__item nav__item--active"> 
+                            <a class="nav__link" href="#home">Главная</a> 
+                        </li> 
+                        <li class="nav__item"> 
+                            <a class="nav__link" href="#sorts">Виды кофе</a> 
+                        </li> 
+                        <li class="nav__item"> 
+                            <a class="nav__link" href="#popular">Хиты</a> 
+                        </li> 
+                        <li class="nav__item"> 
+                            <a class="nav__link" href="#gifts">Подарки</a> 
+                        </li> 
+                        <li class="nav__item"> 
+                            <a class="nav__link" href="#new">Новинки</a> 
+                        </li> 
+                    </ul> 
+                </nav>
+                
+                <!-- Кнопка СТА (только для десктопа) -->
+                <button class="btn btn--primary header__cta">Заказать</button>
+            </div>
+        </div>
+    </header> 
+ 
+    <main>
+        <!-- СЕКЦИЯ С БОЛЬШИМ БАННЕРОМ -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero__container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Кофе с историей</h1>
+                        <p class="hero__text">ВАШ ИДЕАЛЬНЫЙ НАПИТОК<br>ДЛЯ БОДРОГО СТАРТА</p>
+                        <div class="hero__buttons">
+                            <a href="#" class="btn btn--primary hero__btn">КУПИТЬ</a>
+                            <a href="#" class="btn btn--secondary hero__btn">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="hero__banner">
+                        <img src="Баннер.png" alt="REVO coffee" class="hero__banner-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ "НАШИ ВИДЫ КОФЕ" -->
+        <section class="sorts" id="sorts">
+            <div class="container">
+                <h2 class="section-title">НАШИ ВИДЫ КОФЕ</h2>
+                <div class="sorts__grid">
+                    <div class="card"> 
+                        <img src="mag.png" alt="Найти нас легко" class="card__image">
+                        <h3 class="card__title">НАЙТИ НАС ЛЕГКО</h3> 
+                        <p class="card__desc">В центре города и в спальных районах — более 20 точек, где вас ждет любимый напиток. При первом визите — скидка 15%.</p>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="beans.png" alt="От зерна до чашки" class="card__image">
+                        <h3 class="card__title">ОТ ЗЕРНА ДО ЧАШКИ</h3> 
+                        <p class="card__desc">Мы лично отбираем зеленые зерна в странах произрастания и контролируем обжарку, чтобы вы пили кофе высшего качества.</p>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="beans_pack.png" alt="Классические сорта" class="card__image">
+                        <h3 class="card__title">КЛАССИЧЕСКИЕ СОРТА</h3> 
+                        <p class="card__desc">Проверенная классика с мягким вкусом и шоколадными нотками. Подходит для приготовления в турке и кофемашине.</p>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="mash.png" alt="Кофе для автоматов" class="card__image">
+                        <h3 class="card__title">КОФЕ ДЛЯ АВТОМАТОВ</h3> 
+                        <p class="card__desc">Специальный помол, который идеально подходит для офисных и домашних кофейных автоматов. Без горечи, с приятным послевкусием.</p>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ "ХИТЫ ПРОДАЖ" -->
+        <section class="popular" id="popular">
+            <div class="container">
+                <h2 class="section-title">Хиты продаж</h2>
+                <div class="popular__grid">
+                    <div class="card"> 
+                        <img src="coff_blue.png" alt="Revo Крепкий" class="card__image">
+                        <h3 class="card__title">Revo Крепкий</h3> 
+                        <p class="card__desc">Насыщенный, бодрящий, с горьковатым послевкусием</p>
+                        <span class="card__price">420 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="coff_brown.png" alt="Revo Классика" class="card__image">
+                        <h3 class="card__title">Revo Классика</h3> 
+                        <p class="card__desc">Мягкий вкус, сбалансированный, с шоколадным оттенком</p>
+                        <span class="card__price">380 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="coff_read.png" alt="Revo Медовый" class="card__image">
+                        <h3 class="card__title">Revo Медовый</h3> 
+                        <p class="card__desc">Нежный, сладковатый, с легкой кислинкой и медовым ароматом</p>
+                        <span class="card__price">520 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ "ПОДАРКИ" -->
+        <section class="gifts" id="gifts">
+            <div class="container">
+                <h2 class="section-title">ПОДАРКИ</h2>
+                <div class="gifts__container">
+                    <div class="card card--gift"> 
+                        <img src="revo_coff.png" alt="Подарочный кофе" class="card__image card__image--large">
+                        <h3 class="card__title">Тропический берег</h3>
+                        <p class="card__desc">Мягкий вкус с нотками ванили и цитрусов. В подарочной упаковке.</p>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВИНКИ -->
+        <section class="new" id="new">
+            <div class="container">
+                <h2 class="section-title">НОВИНКИ</h2>
+                <div class="new__grid">
+                    <div class="card"> 
+                        <img src="w_coff_blue.png" alt="Медовый капучино" class="card__image">
+                        <h3 class="card__title">Медовый капучино</h3> 
+                        <p class="card__desc">Нежный, с медовой сладостью и мягким сливочным вкусом</p>
+                        <span class="card__price">530 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="w_coff_brown.png" alt="Шоколадный раф" class="card__image">
+                        <h3 class="card__title">Шоколадный раф</h3> 
+                        <p class="card__desc">Насыщенный, с глубоким шоколадным вкусом и бархатистой текстурой</p>
+                        <span class="card__price">490 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                    <div class="card"> 
+                        <img src="w_coff_yellow.png" alt="Кленовый латте с корицей" class="card__image">
+                        <h3 class="card__title">Кленовый латте с корицей</h3> 
+                        <p class="card__desc">Сладковатый, с пряными нотками и уютным осенним ароматом</p>
+                        <span class="card__price">550 ₽</span>
+                        <div class="card__actions">
+                            <a href="#" class="btn btn--primary card__btn">КУПИТЬ</a>
+                            <a href="#" class="card__link">ПОДРОБНЕЕ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- КНОПКА "НАВЕРХ" -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">↑</button>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2025 revo. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="menu.js"></script>
+</body>
+</html>
