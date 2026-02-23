@@ -1,4 +1,4 @@
-// ===== ГАМБУРГЕР-МЕНЮ =====
+// Получаем элементы
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 
@@ -35,7 +35,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Закрытие меню при изменении размера окна (если стало больше 768px)
+// Закрытие меню при изменении размера окна
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
         if (mainNav.classList.contains('active')) {
@@ -44,10 +44,9 @@ window.addEventListener('resize', () => {
     }
 });
 
-// ===== КНОПКА "НАВЕРХ" =====
+// Кнопка "Наверх"
 const scrollTopButton = document.getElementById('scrollTop');
 
-// Показываем кнопку после скролла
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
         scrollTopButton.classList.add('visible');
@@ -56,7 +55,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Прокрутка к началу страницы
 scrollTopButton.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
