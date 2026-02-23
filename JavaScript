@@ -1,65 +1,105 @@
-// ===== ГАМБУРГЕР-МЕНЮ =====
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-// Создаем оверлей для меню
-const navOverlay = document.createElement('div');
-navOverlay.className = 'nav-overlay';
-document.body.appendChild(navOverlay);
-
-// Функция открытия/закрытия меню
-function toggleMenu() {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+// Ждём полной загрузки страницы
+document.addEventListener('DOMContentLoaded', function() {
     
-    // Переключаем состояния
-    menuToggle.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    mainNav.classList.toggle('active');
-    navOverlay.classList.toggle('active');
+    console.log('Скрипт загружен!');
     
-    // Блокируем скролл при открытом меню
-    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-}
-
-// Обработчики событий
-menuToggle.addEventListener('click', toggleMenu);
-navOverlay.addEventListener('click', toggleMenu);
-
-// Закрытие меню при клике на ссылку
-const navLinks = document.querySelectorAll('.nav__link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            toggleMenu();
-        }
-    });
-});
-
-// Закрытие меню при изменении размера окна (если стало больше 768px)
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    // Находим элементы
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    // Проверяем, нашли ли элементы
+    if (!menuToggle) {
+        console.error('Ошибка: не найдена кнопка menuToggle');
+        return;
+    }
+    
+    if (!mainNav) {
+        console.error('Ошибка: не найдена навигация mainNav');
+        return;
+    }
+    
+    console.log('Элементы найдены, создаём overlay');
+    
+    // Создаём затемнение
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+    
+    // Функция открытия/закрытия
+    function toggleMenu() {
+        console.log('toggleMenu вызван');
+        
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Блокируем скролл при открытом меню
         if (mainNav.classList.contains('active')) {
-            toggleMenu();
+            document.body.style.overflow = 'hidden';
+            console.log('Меню открыто');
+        } else {
+            document.body.style.overflow = '';
+            console.log('Меню закрыто');
         }
     }
-});
-
-// ===== КНОПКА "НАВЕРХ" =====
-const scrollTopButton = document.getElementById('scrollTop');
-
-// Показываем кнопку после скролла
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopButton.classList.add('visible');
-    } else {
-        scrollTopButton.classList.remove('visible');
-    }
-});
-
-// Прокрутка к началу страницы
-scrollTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    
+    // Клик по бургеру
+    menuToggle.addEventListener('click', function(e) {
+        console.log('Клик по бургеру');
+        toggleMenu();
     });
+    
+    // Клик по затемнению
+    overlay.addEventListener('click', function(e) {
+        console.log('Клик по overlay');
+        toggleMenu();
+    });
+    
+    // Клик по ссылкам в меню
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            console.log('Клик по ссылке');
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // При изменении размера окна
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            // Если меню открыто - закрываем
+            if (mainNav.classList.contains('active')) {
+                toggleMenu();
+            }
+            document.body.style.overflow = '';
+        }
+    });
+    
+    console.log('Меню инициализировано');
+    
+    // ===== КНОПКА "НАВЕРХ" =====
+    const scrollBtn = document.getElementById('scrollTop');
+    
+    if (scrollBtn) {
+        console.log('Кнопка наверх найдена');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.error('Кнопка наверх не найдена');
+    }
 });
